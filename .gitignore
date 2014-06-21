@@ -1,0 +1,42 @@
+## Node
+node_modules
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+## SASS
+.sass-cache
+#*.css
+
+## builds, env and deploy
+pids
+logs
+bld
+bin
+build
+results
+dist
+.tmp
+*.crx
+*.zip
+*.pem
+
+## Sublime
+*.sublime-workspace
+
+## Windows
+Desktop.ini
+Thumbs.db
+*.pfx
+*.user
+
+## Bower
+app/components
+
+
+
