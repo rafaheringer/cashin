@@ -2,15 +2,16 @@
 
 /**
  * @ngdoc overview
- * @name meutroappApp
+ * @name cashinApp
  * @description
- * # meutroappApp
+ * # cashinApp
  *
  * Main module of the application.
  */
 angular
-  .module('meutroappApp', [
+  .module('cashinApp', [
     'ngAnimate',
+    'directive.g+signin', 
     'ngCookies',
     'ngResource',
     'ngRoute',

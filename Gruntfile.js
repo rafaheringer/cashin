@@ -244,6 +244,44 @@ module.exports = function (grunt) {
       }
     },
 
+    //Fileblocks
+    fileblocks: {
+      options: {
+        rebuild: true
+      },
+
+      all: {
+        src: '<%= yeoman.app %>/index.html',
+        blocks: {
+          'vendorscripts': {
+            cwd: './bower_components',
+            prefix: 'bower_components/',
+            src: 'angular-i18n/angular-locale_pt-br.js'
+          },
+
+          'appscripts': {
+            cwd: '<%= yeoman.app %>/scripts',
+            prefix: 'scripts/',
+            src: '**/*.js'
+          },
+
+          'iescripts': {
+            src: [
+              './bower_components/es5-shim/es5-shim.js',
+              './bower_components/json3/lib/json3.min.js'
+            ]
+          },
+
+          'appstyles': {
+            cwd: '.tmp/styles',
+            //cwd: '<%= yeoman.app %>/styles',
+            prefix: 'styles/',
+            src: '**/*.css'
+          }
+        }
+      }
+    },
+
     // The following *-min tasks will produce minified files in the dist folder
     // By default, your `index.html`'s <!-- Usemin block --> will take care of
     // minification. These next options are pre-configured if you do not wish
@@ -401,6 +439,7 @@ module.exports = function (grunt) {
       'clean:server',
       'wiredep',
       'concurrent:server',
+      'fileblocks',
       'autoprefixer',
       'connect:livereload',
       'watch'
@@ -422,6 +461,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'fileblocks',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',

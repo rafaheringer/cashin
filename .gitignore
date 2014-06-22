@@ -36,7 +36,7 @@ Thumbs.db
 *.user
 
 ## Bower
-app/components
+bower_components
 
 
 
